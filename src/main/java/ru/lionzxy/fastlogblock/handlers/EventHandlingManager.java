@@ -2,7 +2,7 @@ package ru.lionzxy.fastlogblock.handlers;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.text.TextComponentTranslation;
+import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 import net.minecraftforge.event.world.BlockEvent;
@@ -60,9 +60,9 @@ public class EventHandlingManager {
                 notifyAboutEvent(blockEvent, findTaskResult.getEntityPlayer());
             }
             if (findTaskResult.getBlockChangeEventModels().isEmpty()) {
-                findTaskResult.getEntityPlayer().sendMessage(new TextComponentTranslation("message.fastlogblock:blockinfo.event.empty"));
+                findTaskResult.getEntityPlayer().sendMessage(new TextComponentString("§3[FastLogBlock]§f Not found changes with block"));
             } else {
-                findTaskResult.getEntityPlayer().sendMessage(new TextComponentTranslation("message.fastlogblock:blockinfo.event.done"));
+                findTaskResult.getEntityPlayer().sendMessage(new TextComponentString("§3[FastLogBlock]§f Done!"));
             }
         }
     }
@@ -95,14 +95,14 @@ public class EventHandlingManager {
         final String[] args = new String[]{new SimpleDateFormat(dateformat).format(new Date(blockEvent.getTimestamp().getTime())),
                 nickname,
                 blockEvent.getNameblock().toString()};
-        TextComponentTranslation textComponent;
+        TextComponentString textComponent;
         switch (blockEvent.getBlockChangeType()) {
             default:
             case INSERT:
-                textComponent = new TextComponentTranslation("message.fastlogblock:blockinfo.event.insert", (Object[]) args);
+                textComponent = new TextComponentString("§2[+]§6["+args[0]+"§6]§f "+args[1]+": "+args[2]);
                 break;
             case REMOVE:
-                textComponent = new TextComponentTranslation("message.fastlogblock:blockinfo.event.remove", (Object[]) args);
+                textComponent = new TextComponentString("§4[-]§6["+args[0]+"§6]§f "+args[1]+": "+args[2]);
         }
         entityPlayer.sendMessage(textComponent);
     }

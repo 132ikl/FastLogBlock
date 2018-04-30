@@ -1,6 +1,9 @@
-# Fast Log Block [![Build Status](https://travis-ci.org/LionZXY/FastLogBlock.svg?branch=master)](https://travis-ci.org/LionZXY/FastLogBlock) [![codecov](https://codecov.io/gh/LionZXY/FastLogBlock/branch/master/graph/badge.svg)](https://codecov.io/gh/LionZXY/FastLogBlock)
+# Fast Log Block - Server Side Version
 
-This is minecraft mod for easy and fast logging block place and break. 
+This is server-side only Minecraft Forge mod for easy and fast logging block place and break. 
+
+## How to use:
+Simply type /blocklog when looking at a block to see the block's history.
 
 ## Event multithread handling
 ![](https://image.ibb.co/hyaPRw/Fast_Log_Block.png)
