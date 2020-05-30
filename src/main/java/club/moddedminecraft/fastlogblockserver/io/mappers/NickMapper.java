@@ -21,11 +21,11 @@ package club.moddedminecraft.fastlogblockserver.io.mappers;
 
 import club.moddedminecraft.fastlogblockserver.io.base.IterrateByteFile;
 import club.moddedminecraft.fastlogblockserver.models.ASCIString;
+import club.moddedminecraft.fastlogblockserver.utils.Constants;
 import com.google.common.annotations.VisibleForTesting;
 import gnu.trove.TIntObjectHashMap;
 import gnu.trove.TObjectIntHashMap;
 import gnu.trove.list.array.TByteArrayList;
-import club.moddedminecraft.fastlogblockserver.utils.Constants;
 
 import java.io.File;
 import java.io.IOException;

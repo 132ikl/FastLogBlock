@@ -8,6 +8,9 @@ buildscript {
         classpath 'net.minecraftforge.gradle:ForgeGradle:3.+'
     }
 }
+repositories {
+    mavenCentral()
+}
 apply plugin: 'java'
 apply plugin: 'jacoco'
 apply plugin: 'net.minecraftforge.gradle'
@@ -16,7 +19,6 @@ version = "1.0.3"
 group = "club.moddedminecraft.fastlogblockserver"
 archivesBaseName = "FastLogBlockServer"
 
-sourceCompatibility = targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
 compileJava {
     sourceCompatibility = targetCompatibility = '1.8'
 }
@@ -33,7 +35,7 @@ configurations {
 dependencies {
     minecraft 'net.minecraftforge:forge:1.12.2-14.23.5.2854'
 
-    compile group: 'jline', name: 'jline', version: '2.14.6'
+    embed "jline:jline:2.14.6"
     embed "trove:trove:1.0.2"
 
     testCompile 'junit:junit:4.12'
@@ -46,4 +48,8 @@ jacocoTestReport {
         xml.enabled true
         html.enabled false
     }
+}
+
+jar {
+    from configurations.embed.collect { it.isDirectory() ? it : zipTree(it) }
 }

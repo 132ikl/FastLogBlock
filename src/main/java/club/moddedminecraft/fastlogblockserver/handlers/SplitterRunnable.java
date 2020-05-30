@@ -20,8 +20,6 @@
 package club.moddedminecraft.fastlogblockserver.handlers;
 
 import club.moddedminecraft.fastlogblockserver.config.LogConfig;
-import club.moddedminecraft.fastlogblockserver.models.BlockChangeEventModelWithWorld;
-import net.minecraftforge.fml.common.FMLLog;
 import club.moddedminecraft.fastlogblockserver.io.ReadRunnable;
 import club.moddedminecraft.fastlogblockserver.io.WriteRunnable;
 import club.moddedminecraft.fastlogblockserver.io.filesplitter.IFileSplitter;
@@ -29,6 +27,8 @@ import club.moddedminecraft.fastlogblockserver.io.filesplitter.impl.BlockHashFil
 import club.moddedminecraft.fastlogblockserver.io.filesplitter.impl.SingleFileSplitter;
 import club.moddedminecraft.fastlogblockserver.io.mappers.BlockMapper;
 import club.moddedminecraft.fastlogblockserver.io.mappers.NickMapper;
+import club.moddedminecraft.fastlogblockserver.models.BlockChangeEventModelWithWorld;
+import net.minecraftforge.fml.common.FMLLog;
 
 import java.io.File;
 import java.io.IOException;

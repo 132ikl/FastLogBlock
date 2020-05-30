@@ -20,13 +20,13 @@
 package club.moddedminecraft.fastlogblockserver.config;
 
 
+import club.moddedminecraft.fastlogblockserver.FastLogBlockServer;
+import club.moddedminecraft.fastlogblockserver.io.filesplitter.FileSplitterEnum;
 import net.minecraftforge.common.config.Config;
 import net.minecraftforge.common.config.ConfigManager;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import club.moddedminecraft.fastlogblockserver.FastLogBlockServer;
-import club.moddedminecraft.fastlogblockserver.io.filesplitter.FileSplitterEnum;
 
 @Config(modid = FastLogBlockServer.MODID)
 @Config.LangKey("fastlogblock.config.title")

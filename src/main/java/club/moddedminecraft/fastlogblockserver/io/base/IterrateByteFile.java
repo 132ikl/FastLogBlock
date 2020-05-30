@@ -19,9 +19,9 @@
 
 package club.moddedminecraft.fastlogblockserver.io.base;
 
+import club.moddedminecraft.fastlogblockserver.utils.FileUtils;
 import gnu.trove.list.array.TByteArrayList;
 import net.minecraftforge.fml.common.FMLLog;
-import club.moddedminecraft.fastlogblockserver.utils.FileUtils;
 
 import java.io.*;
 import java.nio.file.Files;

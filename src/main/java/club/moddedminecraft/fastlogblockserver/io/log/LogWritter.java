@@ -19,9 +19,9 @@
 
 package club.moddedminecraft.fastlogblockserver.io.log;
 
-import club.moddedminecraft.fastlogblockserver.models.BlockChangeEventModel;
 import club.moddedminecraft.fastlogblockserver.io.mappers.BlockMapper;
 import club.moddedminecraft.fastlogblockserver.io.mappers.NickMapper;
+import club.moddedminecraft.fastlogblockserver.models.BlockChangeEventModel;
 import club.moddedminecraft.fastlogblockserver.utils.Constants;
 import club.moddedminecraft.fastlogblockserver.utils.FileUtils;
 

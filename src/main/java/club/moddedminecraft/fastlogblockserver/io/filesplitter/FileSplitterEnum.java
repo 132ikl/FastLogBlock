@@ -21,6 +21,6 @@ package club.moddedminecraft.fastlogblockserver.io.filesplitter;
 
 public enum FileSplitterEnum {
     SINGLE,
-    BLOCKHASH;
+    BLOCKHASH
 
 }

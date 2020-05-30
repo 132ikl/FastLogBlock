@@ -20,6 +20,7 @@
 package club.moddedminecraft.fastlogblockserver;
 
 import club.moddedminecraft.fastlogblockserver.handlers.EventHandlingManager;
+import club.moddedminecraft.fastlogblockserver.ui.InfoCommand;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.Mod;
@@ -27,8 +28,6 @@ import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.event.FMLServerStoppedEvent;
-
-import club.moddedminecraft.fastlogblockserver.ui.InfoCommand;
 
 import java.io.IOException;
 

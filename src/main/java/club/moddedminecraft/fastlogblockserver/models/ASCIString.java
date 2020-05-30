@@ -20,9 +20,10 @@
 package club.moddedminecraft.fastlogblockserver.models;
 
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 
 public class ASCIString implements CharSequence {
-    private final static Charset ASCI = Charset.forName("ASCII");
+    private final static Charset ASCI = StandardCharsets.US_ASCII;
     private final byte[] shortString;
     private int hashcode = -1;
 
