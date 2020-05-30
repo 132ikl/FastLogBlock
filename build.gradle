@@ -1,21 +1,20 @@
 buildscript {
     repositories {
+        maven { url = 'https://files.minecraftforge.net/maven' }
         jcenter()
-        maven { url = "http://files.minecraftforge.net/maven" }
+        mavenCentral()
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+        classpath 'net.minecraftforge.gradle:ForgeGradle:3.+'
     }
 }
 apply plugin: 'java'
 apply plugin: 'jacoco'
-apply plugin: 'net.minecraftforge.gradle.forge'
-//Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
-
+apply plugin: 'net.minecraftforge.gradle'
 
 version = "1.0.3"
-group = "ru.lionzxy.fastlogblock" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "FastLogBlock"
+group = "club.moddedminecraft.fastlogblockserver"
+archivesBaseName = "FastLogBlockServer"
 
 sourceCompatibility = targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
 compileJava {
@@ -23,16 +22,7 @@ compileJava {
 }
 
 minecraft {
-    version = "1.12.2-14.23.1.2555"
-    runDir = "run"
-
-    // the mappings can be changed at any time, and must be in the following format.
-    // snapshot_YYYYMMDD   snapshot are built nightly.
-    // stable_#            stables are built at the discretion of the MCP team.
-    // Use non-default mappings at your own risk. they may not always work.
-    // simply re-run your setup task after changing the mappings to update your workspace.
-    mappings = "snapshot_20171003"
-    // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
+    mappings channel: 'snapshot', version: '20171003-1.12'
 }
 
 configurations {
@@ -41,9 +31,11 @@ configurations {
 }
 
 dependencies {
+    minecraft 'net.minecraftforge:forge:1.12.2-14.23.5.2854'
+
+    compile group: 'jline', name: 'jline', version: '2.14.6'
     embed "trove:trove:1.0.2"
 
-    // https://mvnrepository.com/artifact/org.mapdb/thread-weaver
     testCompile 'junit:junit:4.12'
     testCompile "org.mapdb:thread-weaver:3.0.mapdb"
 }
@@ -54,27 +46,4 @@ jacocoTestReport {
         xml.enabled true
         html.enabled false
     }
-}
-
-processResources {
-    // this will ensure that this task is redone when the versions change.
-    inputs.property "version", project.version
-    inputs.property "mcversion", project.minecraft.version
-
-    // replace stuff in mcmod.info, nothing else
-    from(sourceSets.main.resources.srcDirs) {
-        include 'mcmod.info'
-
-        // replace version and mcversion
-        expand 'version': project.version, 'mcversion': project.minecraft.version
-    }
-
-    // copy everything else except the mcmod.info
-    from(sourceSets.main.resources.srcDirs) {
-        exclude 'mcmod.info'
-    }
-}
-
-jar {
-    from configurations.embed.collect { it.isDirectory() ? it : zipTree(it) }
 }
